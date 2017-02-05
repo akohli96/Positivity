@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+<script>
+
+$(document).ready(function(){
+    $("button").click(function(){
+        console.log("GETTING CLICKED");
+
+        $.ajax({
+            url : 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en',
+            
+            error : function(xhr,status,error){
+                console.log("WHOOPS");
+                console.log(xhr  + "XHR");
+                console.log(status + "STATUS");
+                console.log(error + "ERROR");
+
+            },
+
+            success : function(data,status,xhr){
+                console.log(data + status + xhr);
+
+            },
+
+        type: 'GET',
+        dataType: 'jsonp',
+        contentType: 'application/javascript',
+       
+
+
+        });
+
+});
+
+ });
+
+</script>
+<title> Be positive </title>
+
+
+
+</head>
+
+<body>
+
+<p> Hello </p>
+
+<button> Click me lol</button>
+
+<div> </div>
+
+</body>
+
+
+
+
+
+
+
+
+</html>
