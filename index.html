@@ -12,44 +12,11 @@
 
 
 
-<script>
 
-$(document).ready(function(){
-    $("button").click(function(){
-        console.log("GETTING CLICKED");
-
-        $.ajax({
-            url : 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en',
-            
-            error : function(xhr,status,error){
-                console.log("WHOOPS");
-                console.log(xhr  + "XHR");
-                console.log(status + "STATUS");
-                console.log(error + "ERROR");
-
-            },
-
-            success : function(data,status,xhr){
-                console.log(data + status + xhr);
-
-            },
-
-        type: 'GET',
-        dataType: 'jsonp',
-        contentType: 'application/javascript',
-       
-
-
-        });
-
-});
-
- });
-
-</script>
 <title> Be positive </title>
 
 
+<script src="./getquote.js"></script>
 
 </head>
 
