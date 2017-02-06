@@ -1,4 +1,5 @@
 
+var quote;
 $(document).ready(function(){
     $("button").click(function(){
         console.log("GETTING CLICKED");
@@ -24,8 +25,9 @@ $(document).ready(function(){
                 console.log(data);
                 console.log(status);
                 console.log(xhr);
-               
-
+                quote=data;
+                console.log(Object.keys(quote));
+                $('#lol').text(quote['quoteText']);
             },
 
   
@@ -38,7 +40,8 @@ $(document).ready(function(){
         });
         function parsequote(data){
             console.log("IN PARSEQUOTE");
-            console.log(data);
+           // console.log(data);
+           
         }
   
 
