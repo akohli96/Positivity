@@ -3,7 +3,7 @@ var quote;
 
 function getquote() {
       $.ajax({
-            url : 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=parsequote',
+            url : 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?',
             type: 'GET',
             dataType: 'jsonp',
             jsonp: "jsonp",
