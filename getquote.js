@@ -10,7 +10,9 @@ function getquote() {
       $('#lol').text(data['quoteText'])
       console.log(data);
 
+  });
 };
+
 $(document).ready(function(){
 getquote();
     $("button").click(function(){
