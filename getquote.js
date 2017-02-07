@@ -1,10 +1,8 @@
 
 var quote;
-$(document).ready(function(){
-    $("button").click(function(){
-        console.log("GETTING CLICKED");
 
-        $.ajax({
+function getquote() {
+      $.ajax({
             url : 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=parsequote',
             type: 'GET',
             dataType: 'jsonp',
@@ -29,23 +27,19 @@ $(document).ready(function(){
                 console.log(Object.keys(quote));
                 $('#lol').text(quote['quoteText']);
             },
-
-  
-       
-        
-
-
- 
-
         });
+
         function parsequote(data){
             console.log("IN PARSEQUOTE");
-           // console.log(data);
-           
+           // console.log(data);  
         }
-  
 
-
+};
+$(document).ready(function(){
+getquote();
+    $("button").click(function(){
+        console.log("GETTING CLICKED");
+    getquote();
 });
 
  });
