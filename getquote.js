@@ -6,16 +6,9 @@ function getquote() {
 
   $.getJSON(forismaticURL, function(data) {
 
-    text.html(data.quoteText);
-    if (data.quoteAuthor) {
-      author.html(data.quoteAuthor);
-      author.attr("href", data.quoteLink);
-    } else {
-      author.removeAttr("href");
-      author.html("<strong>Anonymous</strong>");
-    }
-    tweetThis = data.quoteText + " By - " + data.quoteAuthor;
-  });
+      console.log(status + data);
+      $('#lol').text(data['quoteText'])
+      console.log(data);
 
 };
 $(document).ready(function(){
