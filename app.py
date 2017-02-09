@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 import requests
 import json
 
@@ -9,7 +9,7 @@ DEFAULT_QUOTE={u'quoteText': u'The awareness of our own strength makes us modest
 API = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
 
 def get_quote():
-    
+    print "In get quote :)"
     try:
 
         quote=requests.get(API).json()
@@ -18,14 +18,13 @@ def get_quote():
     except Exception as e:
         print e
         return DEFAULT_QUOTE
-    #print quote
 
 
 
 
 @app.route('/')
-def hello_world(quote=None):    
-    return str(get_quote())
+def hello_world():    
+    return render_template('index.html',quote=get_quote())
 
 
 
