@@ -1,39 +1,53 @@
-from flask import Flask,render_template,jsonify,request
-import requests
-import json
+"""
+Flask backend to display quote in browser
 #https://damyanon.net/flask-series-testing/
-app = Flask(__name__)
+"""
+import json
+import logging
+from flask import Flask, render_template
+import requests
 
-DEFAULT_QUOTE={u'quoteText': u'The awareness of our own strength makes us modest.', u'senderName': u'', u'senderLink': u'', u'quoteAuthor': u'Paul Cezanne', u'quoteLink': u'http://forismatic.com/en/0bef4d5e85/'}
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+
+
+
+
+
+APP = Flask(__name__)
+
+DEFAULT_QUOTE = {u'quoteText': u'The awareness of our own strength makes us modest.',
+                 u'senderName': u'',
+                 u'senderLink': u'',
+                 u'quoteAuthor': u'Paul Cezanne',
+                 u'quoteLink': u'http://forismatic.com/en/0bef4d5e85/'}
 
 API = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
 
 def get_quote():
-    print "In get quote :)"
+    logging.debug("In get quote :)")
     try:
 
-        quote=requests.get(API).json()
-        quote=json.dumps(quote)
+        quote = requests.get(API).json()
+        quote = json.dumps(quote)
         return quote
     except Exception as e:
-        print e
+        logging.error(e)
         return DEFAULT_QUOTE
 
 
 
 
-@app.route('/')
-def hello_world():    
-    return render_template('index.html',quote=get_quote())
+@APP.route('/')
+def hello_world():
+    return render_template('index.html', quote=get_quote())
 
-@app.route('/getQuote',methods=['GET'])
+@APP.route('/getQuote', methods=['GET'])
 def getQuote():
 
-    print "Getquote"
+    logging.debug("In Getquote")
+    quote = get_quote()
+    return quote
 
-    return "YEA GOT REQUEST FAM"
-
-    
 if __name__ == '__main__':
-    
-    app.run(debug=True)
+
+    APP.run(debug=True)
