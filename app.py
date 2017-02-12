@@ -1,7 +1,7 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,jsonify,request
 import requests
 import json
-
+#https://damyanon.net/flask-series-testing/
 app = Flask(__name__)
 
 DEFAULT_QUOTE={u'quoteText': u'The awareness of our own strength makes us modest.', u'senderName': u'', u'senderLink': u'', u'quoteAuthor': u'Paul Cezanne', u'quoteLink': u'http://forismatic.com/en/0bef4d5e85/'}
@@ -26,7 +26,12 @@ def get_quote():
 def hello_world():    
     return render_template('index.html',quote=get_quote())
 
+@app.route('/getQuote',methods=['GET'])
+def getQuote():
 
+    print "Getquote"
+
+    return "YEA GOT REQUEST FAM"
 
     
 if __name__ == '__main__':
