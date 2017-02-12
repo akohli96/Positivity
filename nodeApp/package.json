@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/akohli96/Positivity/issues"
   },
-  "homepage": "https://github.com/akohli96/Positivity#readme"
+  "homepage": "https://github.com/akohli96/Positivity#readme",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
 }
