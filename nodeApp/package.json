@@ -1,0 +1,23 @@
+{
+  "name": "positivity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akohli96/Positivity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akohli96/Positivity/issues"
+  },
+  "homepage": "https://github.com/akohli96/Positivity#readme",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}
