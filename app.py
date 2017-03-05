@@ -4,7 +4,7 @@ Flask backend to display quote in browser
 """
 import json
 import logging
-from flask import Flask, render_template
+from flask import Flask, render_template,jsonify
 import requests
 
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
@@ -28,7 +28,6 @@ def get_quote():
     try:
 
         quote = requests.get(API).json()
-        quote = json.dumps(quote)
         return quote
     except Exception as e:
         logging.error(e)
@@ -39,14 +38,15 @@ def get_quote():
 
 @APP.route('/')
 def hello_world():
-    return render_template('index.html', quote=get_quote())
+    positive_quote = get_quote()
+    return render_template('index.html', quote=positive_quote)
 
 @APP.route('/getQuote', methods=['GET'])
 def getQuote():
-
     logging.debug("In Getquote")
     quote = get_quote()
-    return quote
+   
+    return jsonify(quote)
 
 if __name__ == '__main__':
 
