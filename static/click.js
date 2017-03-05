@@ -20,7 +20,14 @@ document.onclick = function(event) {
         if (this.readyState == 4 && this.status == 200) {
 
             // console.log("GET request to server to fetch quote succeeded.")
-            document.getElementById("quote").innerHTML = quoteRequest.responseText;
+
+            var Data = JSON.parse(quoteRequest.responseText);
+            console.log(Data);
+            console.log(Data.quoteText);
+            console.log(Data.quoteAuthor);
+
+            document.getElementById("text").innerHTML = Data.quoteText;
+            document.getElementById("author").innerHTML = Data.quoteAuthor;
 
         }
     };
