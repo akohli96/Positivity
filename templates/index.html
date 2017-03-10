@@ -11,17 +11,29 @@
 
 <body>
 
-    <div id='quote'>
+
+    <div id='quoteHolder'>
+        Quote:
         <div id='text'>
             {{quote['quoteText']}}
         </div>
-        <div id='author'>
-            <br> {{quote['quoteAuthor']}}
-
-        </div>
-
-
     </div>
+
+    <div id='authorHolder'>
+        Author: {% if quote['quoteAuthor'] != "" %}
+        <div id='author'>
+            {{quote['quoteAuthor']}}
+        </div>
+        {% else %}
+        <div id='author'>
+            Not known
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
 
 
 </body>
