@@ -31,7 +31,7 @@ document.onclick = function(event) {
 
         }
     };
-    quoteRequest.open("GET", "/getQuote", true);
+    quoteRequest.open("GET", "/get_ajax_quote", true);
     quoteRequest.send();
 
 };
