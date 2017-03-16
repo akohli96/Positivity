@@ -35,19 +35,25 @@
         {% endif %}
     </div>
 
-    <div>
-        <p> Resources for help </p>
-        <ul>
-            <ul>
-                <a href="http://tinybuddha.com/"> Tiny Buddha</a>
-            </ul>
-            <ul>
-                <a href="https://www.adaa.org/tips-manage-anxiety-and-stress"> Tips for managing stress </a>
-            </ul>
-        </ul>
+    <div class="container">
+        <h2 class="text-center"> <small>Resources for help </small> </h2>
     </div>
+    <ul>
+        <ul>
+            <div class="container">
+                <h3 class="text-center"> <a href="http://tinybuddha.com/"> Tiny Buddha</a> </h3>
+            </div>
+        </ul>
+        <ul>
+            <div class="container">
+                <h3 class="text-center"> <a href="https://www.adaa.org/tips-manage-anxiety-and-stress"> Tips for managing stress </a> </h3>
+            </div>
+        </ul>
+    </ul>
+    </div>
+
     <div>
-        <img src="{{url_for('static', filename='images/breathing.gif')}}" alt="Try to take deep breaths">
+        <img src="{{url_for('static', filename='images/breathing.gif')}}" alt="Try to take deep breaths" class="img-responsive center-block">
     </div>
 
 
