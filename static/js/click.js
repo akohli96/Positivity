@@ -22,9 +22,9 @@ document.onclick = function(event) {
             // console.log("GET request to server to fetch quote succeeded.")
 
             var Data = JSON.parse(quoteRequest.responseText);
-            console.log(Data);
-            console.log(Data.quoteText);
-            console.log(Data.quoteAuthor);
+            // console.log(Data);
+            // console.log(Data.quoteText);
+            // console.log(Data.quoteAuthor);
 
             document.getElementById("text").innerHTML = Data.quoteText;
             document.getElementById("author").innerHTML = Data.quoteAuthor;
