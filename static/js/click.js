@@ -25,9 +25,14 @@ document.onclick = function(event) {
             // console.log(Data);
             // console.log(Data.quoteText);
             // console.log(Data.quoteAuthor);
-
+            //console.log(Data.quoteAuthor.length);
             document.getElementById("text").innerHTML = Data.quoteText;
-            document.getElementById("author").innerHTML = Data.quoteAuthor;
+            if (Data.quoteAuthor.length != 0) {
+                document.getElementById("author").innerHTML = Data.quoteAuthor;
+            } else {
+                document.getElementById("author").innerHTML = "Unknown";
+            }
+
 
         }
     };
