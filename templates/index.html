@@ -18,31 +18,31 @@
 <body>
 
     <div class="container">
-        <div id='quoteHolder'>
-            <div class="text-center">
 
-                Quote:
-                <div id='text'>
-                    {{quote['quoteText']}}
-                </div>
+        <div class="text-center">
+
+            <h3> Quote:</h3>
+            <div id='text'>
+                <h3> {{quote['quoteText']}} </h3>
             </div>
+
         </div>
     </div>
 
     <div class="container">
         <div class="text-center">
-            <div id='authorHolder'>
-                Author: {% if quote['quoteAuthor'] != "" %}
-                <div id='author'>
-                    {{quote['quoteAuthor']}}
-                </div>
-                {% else %}
-                <div id='author'>
-                    Not known
-                </div>
-                {% endif %}
+
+            <h3> Author: {% if quote['quoteAuthor'] != "" %} </h3>
+            <div id='author'>
+                <h3> {{quote['quoteAuthor']}}</h3>
             </div>
+            {% else %}
+            <div id='author'>
+                <h3> Not known </h3>
+            </div>
+            {% endif %}
         </div>
+
     </div <div class="container">
     <h2 class="text-center"> <small>Resources for help </small> </h2>
     </div>
