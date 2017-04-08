@@ -22,9 +22,9 @@
         <div class="text-center">
 
             <h3> Quote:</h3>
-            <div id='text'>
-                <h3> {{quote['quoteText']}} </h3>
-            </div>
+
+            <h3 id='text'> {{quote['quoteText']}} </h3>
+
 
         </div>
     </div>
@@ -33,13 +33,11 @@
         <div class="text-center">
 
             <h3> Author: {% if quote['quoteAuthor'] != "" %} </h3>
-            <div id='author'>
-                <h3> {{quote['quoteAuthor']}}</h3>
-            </div>
+
+            <h3 id='author'> {{quote['quoteAuthor']}}</h3>
+
             {% else %}
-            <div id='author'>
-                <h3> Not known </h3>
-            </div>
+            <h3 id='author'> Not known </h3>
             {% endif %}
         </div>
 
