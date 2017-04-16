@@ -20,3 +20,8 @@ pip install -r requirements.txt
 python app.py
 
 ```
+
+TODO:
+
+1. Soundcloud API integration
+2. Dockerise
