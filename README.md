@@ -14,7 +14,7 @@ sudo pip install virtualenv
 git clone https://github.com/akohli96/Positivity.git
 virtualenv myenv
 source myenv/bin/activate
-
+cd Positivity
 pip install -r requirements.txt
 
 python app.py
